@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'adani-test1';
+
+  events: string[] = [];
+  opened: boolean;
 }

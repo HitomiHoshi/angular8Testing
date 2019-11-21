@@ -1,0 +1,25 @@
+.test { 
+    font-size: larger;
+}
+
+.leftnav {
+    float: left;
+    /* width: 20%; */
+}
+
+.rightnav {
+    float: right;
+    width: 20%;
+}
+
+.buttonRight {
+    float: right;
+}
+
+.example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }

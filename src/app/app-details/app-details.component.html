@@ -1,0 +1,9 @@
+<mat-sidenav-content>
+    <p><button mat-button (click)="sidenav1.toggle()">Left</button>
+        <button class="buttonRight" mat-button (click)="sidenav2.toggle()">Right</button></p>
+</mat-sidenav-content>
+
+<mat-sidenav position="end" #sidenavright mode="{{SideNavMode}}" class="rightnav">
+    RightSideNav : {{SideNavMode}}
+    <app-template2></app-template2>
+</mat-sidenav>
