@@ -1,5 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
+import {A11yModule} from '@angular/cdk/a11y';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import {PortalModule} from '@angular/cdk/portal';
+import {ScrollingModule} from '@angular/cdk/scrolling';
+import {CdkStepperModule} from '@angular/cdk/stepper';
+import {CdkTableModule} from '@angular/cdk/table';
+import {CdkTreeModule} from '@angular/cdk/tree';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,7 +18,9 @@ import { AppDetailsComponent } from './app-details/app-details.component';
 import { Template2Component } from './layout/template2/template2.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {
+
+
+import { 
   MatFormFieldModule,
   MatAutocompleteModule,
   MatButtonToggleModule,
@@ -26,6 +37,7 @@ import {
   MatListModule,
   MatMenuModule,
   MatNativeDateModule,
+  MatPaginatorModule,
   MatProgressBarModule,
   MatProgressSpinnerModule,
   MatRadioModule,
@@ -51,6 +63,14 @@ import {
     Template2Component
   ],
   imports: [
+    FlexLayoutModule,
+    A11yModule,
+    CdkStepperModule,
+    CdkTableModule,
+    CdkTreeModule,
+    DragDropModule,
+    PortalModule,
+    ScrollingModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -70,6 +90,7 @@ import {
     MatListModule,
     MatMenuModule,
     MatNativeDateModule,
+    MatPaginatorModule,
     MatProgressBarModule,
     MatProgressSpinnerModule,
     MatRadioModule,
@@ -85,7 +106,7 @@ import {
     MatToolbarModule,
     MatTooltipModule
   ],
-  providers: [],
+  providers: [CdkTableModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

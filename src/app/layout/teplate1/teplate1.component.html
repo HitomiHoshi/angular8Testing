@@ -1,1 +1,56 @@
-<p>teplate1 works!</p>
+<p>Channel</p>
+<div>
+    <!-- TODO: setting paginator to table -->
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator> 
+
+    <!-- TODO: each cell receive data from user -->
+    <table mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="ip">
+            <th mat-header-cell *matHeaderCellDef> IP </th>
+            <td mat-cell *matCellDef="let element"> {{element.ip}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="bandwidth">
+            <th mat-header-cell *matHeaderCellDef> Bandwidth </th>
+            <td mat-cell *matCellDef="let element"> {{element.bandwidth}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="packetUnit">
+            <th mat-header-cell *matHeaderCellDef> PacketUnit </th>
+            <td mat-cell *matCellDef="let element"> {{element.packetUnit}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="ttl">
+            <th mat-header-cell *matHeaderCellDef> ttl </th>
+            <td mat-cell *matCellDef="let element">{{element.ttl}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="transportType">
+            <th mat-header-cell *matHeaderCellDef> TransportType </th>
+            <td mat-cell *matCellDef="let element">{{element.transportType}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="state">
+            <th mat-header-cell *matHeaderCellDef> State </th>
+            <td mat-cell *matCellDef="let element">{{element.state}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="now">
+            <th mat-header-cell *matHeaderCellDef> Now </th>
+            <td mat-cell *matCellDef="let element">{{element.now}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="next">
+            <th mat-header-cell *matHeaderCellDef> Next </th>
+            <td mat-cell *matCellDef="let element">{{element.next}}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

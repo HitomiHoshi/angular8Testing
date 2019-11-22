@@ -2,16 +2,20 @@
   <mat-sidenav #sidenavleft mode="{{SideNavMode}}" class="leftnav" [ngStyle]="{'width': LeftNavWidth}">
     <mat-toolbar color="primary">Playout</mat-toolbar>
     <mat-nav-list flex="row">
-      <mat-list-item *ngFor="let link of links" routerLinkActive="active">
-        <a matLine routerLink="/{{ link.path }}">{{ link.name }}</a>
+      <mat-list-item *ngFor="let link of links" >
+        <a matLine routerLinkActive="active" routerLink="/{{ link.path }}">{{ link.name }}</a>
       </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
 
   <mat-sidenav-content>
     <p>
-      <button mat-button (click)="sidenavleft.toggle()">Left</button>
-      <button class="buttonRight" mat-button (click)="sidenavright.toggle()">Right</button>
+      <button mat-button (click)="sidenavleft.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <button class="buttonRight" mat-button (click)="sidenavright.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">vertical_split</mat-icon>
+      </button>
     </p>
     <router-outlet></router-outlet>
   </mat-sidenav-content>

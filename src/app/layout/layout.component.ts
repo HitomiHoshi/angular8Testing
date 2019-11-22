@@ -12,8 +12,8 @@ export class LayoutComponent implements OnInit {
     this.onloadWindowSetup(event.target.innerWidth);
   }
 
-  SideNavMode : string;
-  LeftNavWidth : string;
+  SideNavMode: string;
+  LeftNavWidth: string;
 
   links = [
     { path: 'template1', name: 'Template 1' },
@@ -41,5 +41,5 @@ export class LayoutComponent implements OnInit {
     }
   }
 
-  
+
 }
