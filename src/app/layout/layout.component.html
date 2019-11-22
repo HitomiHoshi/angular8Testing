@@ -8,13 +8,12 @@
     </mat-nav-list>
   </mat-sidenav>
 
-  <router-outlet (activate)="onActivate($event)"></router-outlet>
-
   <mat-sidenav-content>
     <p>
       <button mat-button (click)="sidenavleft.toggle()">Left</button>
       <button class="buttonRight" mat-button (click)="sidenavright.toggle()">Right</button>
     </p>
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 
   <mat-sidenav position="end" #sidenavright mode="{{SideNavMode}}" class="rightnav">
