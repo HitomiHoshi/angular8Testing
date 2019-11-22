@@ -1,6 +1,6 @@
 <mat-sidenav-container fullscreen class="example-container">
   <mat-sidenav #sidenavleft mode="{{SideNavMode}}" class="leftnav" [ngStyle]="{'width': LeftNavWidth}">
-    <mat-toolbar>Playout</mat-toolbar>
+    <mat-toolbar color="primary">Playout</mat-toolbar>
     <mat-nav-list flex="row">
       <mat-list-item *ngFor="let link of links" routerLinkActive="active">
         <a matLine routerLink="/{{ link.path }}">{{ link.name }}</a>
