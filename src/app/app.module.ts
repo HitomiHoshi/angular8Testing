@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HttpClientModule } from '@angular/common/http';
 
 import {A11yModule} from '@angular/cdk/a11y';
 import {DragDropModule} from '@angular/cdk/drag-drop';
@@ -17,8 +18,10 @@ import { Teplate1Component } from './layout/teplate1/teplate1.component';
 import { AppDetailsComponent } from './app-details/app-details.component';
 import { Template2Component } from './layout/template2/template2.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
+import { LiveComponent } from './app-details/live/live.component';
+import { ScheduleComponent } from './app-details/schedule/schedule.component';
+import { PreviewComponent } from './app-details/preview/preview.component';
+import { TablecontrolService } from  './tablecontrol.service';
 
 import { 
   MatFormFieldModule,
@@ -60,9 +63,13 @@ import {
     LayoutComponent,
     Teplate1Component,
     AppDetailsComponent,
-    Template2Component
+    Template2Component,
+    LiveComponent,
+    ScheduleComponent,
+    PreviewComponent,
   ],
   imports: [
+    HttpClientModule,
     FlexLayoutModule,
     A11yModule,
     CdkStepperModule,
@@ -106,7 +113,7 @@ import {
     MatToolbarModule,
     MatTooltipModule
   ],
-  providers: [CdkTableModule],
+  providers: [CdkTableModule, TablecontrolService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

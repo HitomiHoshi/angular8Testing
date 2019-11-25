@@ -1,0 +1,35 @@
+[
+    {
+        "name": "TV1",
+        "ip": "0.0.0.0",
+        "bandwidth": 100,
+        "packetUnit": 1,
+        "ttl": 1,
+        "transportType": "UDP",
+        "state": "Running",
+        "now": "video2.mpg",
+        "next": "video3.mpg"
+    },
+    {
+        "name": "TV2",
+        "ip": "192.168.5.126",
+        "bandwidth": 250,
+        "packetUnit": 1,
+        "ttl": 1,
+        "transportType": "RTP",
+        "state": "Running",
+        "now": "video4.mpg",
+        "next": "video1.mpg"
+    },
+    {
+        "name": "TV3",
+        "ip": "192.168.5.111",
+        "bandwidth": 110,
+        "packetUnit": 1,
+        "ttl": 1,
+        "transportType": "HTTP",
+        "state": "Idle",
+        "now": "",
+        "next": ""
+    }
+]

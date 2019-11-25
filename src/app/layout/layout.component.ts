@@ -16,9 +16,9 @@ export class LayoutComponent implements OnInit {
   LeftNavWidth: string;
 
   links = [
-    { path: 'template1', name: 'Template 1' },
-    { path: 'template2', name: 'Template 2' },
-    { path: 'details', name: 'Template 3' }
+    { path: 'template1', name: 'Channel' },
+    { path: 'details', name: 'Schedule' },
+    { path: 'template2', name: 'Configuration' }
   ];
 
   selected: ActivatedRoute;
