@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Template2Component implements OnInit {
 
-  constructor() { }
+  constructor(  ) { }
 
   ngOnInit() {
   }

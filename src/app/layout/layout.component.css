@@ -16,18 +16,13 @@
     float: right;
 }
 
-.example-container {
+.sidenavcontainer {
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
 }
-
-/* a:visited, a:link {
-    
-    color: #607D8B;
-} */
 
 mat-nav-list mat-list-item a.active {
     font-weight: bold;

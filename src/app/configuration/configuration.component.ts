@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { LayoutService } from '../layout/layout.service';
 
 @Component({
-  selector: 'app-app-details',
-  templateUrl: './app-details.component.html',
-  styleUrls: ['./app-details.component.css']
+  selector: 'app-configuration',
+  templateUrl: './configuration.component.html',
+  styleUrls: ['./configuration.component.css']
 })
 
-export class AppDetailsComponent implements OnInit {
+export class ConfigurationComponent implements OnInit {
 
   constructor(
     private layoutService: LayoutService,
@@ -24,5 +24,4 @@ export class AppDetailsComponent implements OnInit {
   {
    return this.layoutService.getSidenavMode();
   }
-
 }
