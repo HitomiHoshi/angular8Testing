@@ -1,3 +1,13 @@
-<p>
-    template 2 working!
-</p>
+<div class="example-container">
+    <h2>Content</h2>
+
+    <div cdkDropList class="example-list" id="list-2" cdkDropListSortingDisabled [cdkDropListData]="sourceitem"
+        cdkDropListConnectedTo="list-1" (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of sourceitem" cdkDrag>{{item}}</div>
+    </div>
+
+    <!-- <div cdkDropList id="list-2" #doneList="cdkDropList" [cdkDropListData]="done" [cdkDropListConnectedTo]="[todoList]"
+        class="example-list" (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+    </div> -->
+</div>

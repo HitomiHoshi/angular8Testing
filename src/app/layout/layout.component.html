@@ -1,34 +1,55 @@
 <mat-sidenav-container fullscreen class="sidenavcontainer">
-  <mat-sidenav #sidenavleft mode="{{SideNavMode}}" class="leftnav" [ngStyle]="{'width': LeftNavWidth}">
-    <mat-toolbar color="primary">
-      Playout
-      <!-- TODO: button must at the end of toolbar -->
-      <button mat-icon-button class="buttonRight" (click)="toggleLeftNav()">
-        <mat-icon aria-label="Left sidenav toggle icon">menu</mat-icon>
-      </button>
-    </mat-toolbar>
-    <mat-nav-list flex="row">
-      <mat-list-item *ngFor="let link of links">
-        <!-- TODO: child router link -->
-        <a #link1 matLine routerLinkActive="active" routerLink="/{{ link.path }}">{{ link.name }}</a>
-      </mat-list-item>
-    </mat-nav-list>
-  </mat-sidenav>
+    <mat-sidenav #sidenavleft mode="{{SideNavMode}}" class="leftnav" [ngStyle]="{'width': LeftNavWidth}">
+        <mat-toolbar color="primary">
+            Playout
+            <!-- TODO: button must at the end of toolbar -->
+            <button mat-icon-button class="buttonRight" (click)="toggleLeftNav()">
+                <mat-icon aria-label="Left sidenav toggle icon">menu</mat-icon>
+            </button>
+        </mat-toolbar>
 
-  <!-- <mat-sidenav-content> -->
-    <!-- <p>
-      <button mat-icon-button (click)="toggleLeftNav()">
-        <mat-icon aria-label="Left sidenav toggle icon">menu</mat-icon>
-      </button>
-      <button mat-icon-button class="buttonRight" (click)="sidenavright.toggle()">
-        <mat-icon aria-label="Right sidenav toggle icon">vertical_split</mat-icon>
-      </button>
-    </p> -->
-    <router-outlet></router-outlet>
-  <!-- </mat-sidenav-content> -->
+        <mat-nav-list>
+            <mat-accordion displayMode="default" [multi]="false">
+                <ng-container *ngFor="let link of links">
+                    <ng-container *ngIf="link.name === 'Schedule'; else link2">
+                        <mat-expansion-panel [hideToggle]="false">
+                            <mat-expansion-panel-header>{{link.name}}</mat-expansion-panel-header>
+                            <mat-list-item *ngFor="let childlink of link.children">
+                                <a matLine routerLinkActive="active" routerLink="/{{ childlink.path }}">
+                                    {{ childlink.name }}
+                                </a>
+                            </mat-list-item>
+                        </mat-expansion-panel>
+                    </ng-container>
+                    <ng-template #link2>
+                        <mat-expansion-panel [hideToggle]="true" [disabled]="isDisable">
+                            <mat-expansion-panel-header>
+                                <a matLine routerLinkActive="active" routerLink="/{{ link.path }}">
+                                    {{ link.name }}
+                                </a>
+                            </mat-expansion-panel-header>
+                        </mat-expansion-panel>
+                    </ng-template>
+                </ng-container>
+            </mat-accordion>
+        </mat-nav-list>
+        <!-- <mat-nav-list flex="row">
+            <mat-list-item *ngFor="let link of links">
+                <ng-container *ngIf="link.name === 'Schedule'; else link2">
+                    {{link.name}}
+                    <mat-list-item *ngFor="let childlink of link.children">
+                        <a matLine routerLinkActive="active" routerLink="/{{ childlink.path }}">{{ childlink.name }}</a>
+                    </mat-list-item>
+                </ng-container>
+                <ng-template #link2>
+                    <a matLine routerLinkActive="active" routerLink="/{{ link.path }}">{{ link.name }}</a>
+                </ng-template>
+            </mat-list-item>
+        </mat-nav-list> -->
 
-  <!-- <mat-sidenav position="end" #sidenavright mode="{{SideNavMode}}" class="rightnav">
-    RightSideNav : {{SideNavMode}}
-    <app-template2></app-template2>
-  </mat-sidenav> -->
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
 </mat-sidenav-container>

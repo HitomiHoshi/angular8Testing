@@ -1,29 +1,27 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 
 export class LayoutService {
 
-  sidenavMode: string;
+    sidenavMode: string;
 
-  @Output() leftToggle: EventEmitter<any> = new EventEmitter();
+    @Output() leftToggle: EventEmitter<any> = new EventEmitter();
 
-  constructor() { }
+    constructor() { }
 
-  toggleLeft() {
-    console.log('Toggle working');
-    this.leftToggle.emit('left');
-  }
+    toggleLeft() {
+        console.log('Toggle working');
+        this.leftToggle.emit('left');
+    }
 
-  setSideNavMode(sm:string)
-  {
-    console.log(sm);
-    this.sidenavMode=sm;
-  }
-  getSidenavMode(): string
-  {
-    return this.sidenavMode;
-  }
+    setSideNavMode(sm: string) {
+        console.log(sm);
+        this.sidenavMode = sm;
+    }
+    getSidenavMode(): string {
+        return this.sidenavMode;
+    }
 }

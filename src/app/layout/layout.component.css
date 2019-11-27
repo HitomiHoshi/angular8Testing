@@ -29,7 +29,12 @@ mat-nav-list mat-list-item a.active {
     color: rgb(68, 0, 68);
 }
 
+a.active {
+    font-weight: bold;
+    color: rgb(68, 0, 68);
+}
+
  a:hover{
-    color: blue; 
+    color: rgb(231, 20, 238); 
     
 }

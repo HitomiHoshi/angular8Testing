@@ -1,27 +1,23 @@
 <mat-sidenav-container fullscreen class="sidenavcontainer">
-        <p>
-            <button mat-icon-button (click)="toggleLeftNav()">
-                <mat-icon aria-label="Left sidenav toggle icon">menu</mat-icon>
-            </button>
-            Schedule
-            <button mat-icon-button class="buttonRight" (click)="sidenavright.toggle()">
-                <mat-icon aria-label="Right sidenav toggle icon">vertical_split</mat-icon>
-            </button>
-        </p>
-        <mat-tab-group flex="column">
-            <mat-tab label="Live">
-                <app-live></app-live>
-            </mat-tab>
-            <mat-tab label="Schedule">
-                <app-schedule></app-schedule>
-            </mat-tab>
-            <mat-tab label="Preview">
-                <app-preview></app-preview>
-            </mat-tab>
-        </mat-tab-group>
+    <p>
+        <button mat-icon-button (click)="toggleLeftNav()">
+            <mat-icon aria-label="Left sidenav toggle icon">menu</mat-icon>
+        </button>
+        Schedule
+        <button mat-icon-button class="buttonRight" (click)="sidenavright.toggle()">
+            <mat-icon aria-label="Right sidenav toggle icon">vertical_split</mat-icon>
+        </button>
+    </p>
+    <mat-tab-group flex="column">
+        <mat-tab label="Schedule">
+            <app-schedule></app-schedule>
+        </mat-tab>
+        <mat-tab label="Preview">
+            <app-preview></app-preview>
+        </mat-tab>
+    </mat-tab-group>
     <!-- "{{SideNavMode}}" -->
     <mat-sidenav position="end" #sidenavright mode="{{sidenavMode()}}" class="rightnav">
-        RightSideNav : {{sidenavMode()}}
         <app-template2></app-template2>
     </mat-sidenav>
 </mat-sidenav-container>

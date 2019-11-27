@@ -1,31 +1,47 @@
-<div>
-    <p>Live</p>
+<mat-sidenav-container fullscreen class="sidenavcontainer">
+    <div>
+        <p>
+            <button mat-icon-button (click)="toggleLeftNav()">
+                <mat-icon aria-label="Left sidenav toggle icon">menu</mat-icon>
+            </button>
+            TV Guide
+            <button mat-icon-button class="buttonRight" (click)="sidenavright.toggle()">
+                <mat-icon aria-label="Right sidenav toggle icon">vertical_split</mat-icon>
+            </button>
+        </p>
 
-    <p class="clock">
-        {{ clock | date }}
-        <br>
-        {{ clock | date: 'hh:mm:ss a' }}
-    </p>
-</div>
-<br>
-<div>
-    <table mat-table [dataSource]="dataSource">
-        <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef> Name </th>
-            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-        </ng-container>
+        <p class="clock">
+            {{ clock | date:"yyyy-MM-dd" }}
+            <br>
+            {{ clock | date: ' HH : mm : ss ' }}
+        </p>
+    </div>
+    <br>
+    <div>
+        <table mat-table [dataSource]="dataSource">
 
-        <ng-container matColumnDef="start">
-            <th mat-header-cell *matHeaderCellDef> Start </th>
-            <td mat-cell *matCellDef="let element"> {{element.start}} </td>
-        </ng-container>
+            <ng-container matColumnDef="start">
+                <th mat-header-cell *matHeaderCellDef> Start </th>
+                <td mat-cell *matCellDef="let element"> {{element.start}} </td>
+            </ng-container>
 
-        <ng-container matColumnDef="end">
-            <th mat-header-cell *matHeaderCellDef> End </th>
-            <td mat-cell *matCellDef="let element"> {{element.end}} </td>
-        </ng-container>
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} <br>
+                    <mat-progress-bar mode="determinate" value="80"></mat-progress-bar>
+                </td>
+            </ng-container>
 
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-</div>
+            <ng-container matColumnDef="end">
+                <th mat-header-cell *matHeaderCellDef> End </th>
+                <td mat-cell *matCellDef="let element"> {{element.end}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+    <mat-sidenav position="end" #sidenavright mode="{{sidenavMode()}}" class="rightnav">
+        <app-template2></app-template2>
+    </mat-sidenav>
+</mat-sidenav-container>

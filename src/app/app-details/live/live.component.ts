@@ -1,38 +1,50 @@
 import { Component, OnInit } from '@angular/core';
+import { LayoutService } from 'src/app/layout/layout.service';
 
 export interface LiveData {
-  name: string;
-  start: string;
-  end: string;
+    start: string;
+    name: string;
+    end: string;
 }
 
 const ELEMENT_DATA: LiveData[] = [
-  { name: "Video1", start: "00:00:00", end: "00:00:10" },
+    { start: "00:00:00", name: "Video1", end: "00:00:10" },
 ];
 
 @Component({
-  selector: 'app-live',
-  templateUrl: './live.component.html',
-  styleUrls: ['./live.component.css']
+    selector: 'app-live',
+    templateUrl: './live.component.html',
+    styleUrls: ['./live.component.css']
 })
 export class LiveComponent implements OnInit {
 
-  clock = new Date();
-  clockHandle;
+    clock = new Date();
+    clockHandle;
 
-  displayedColumns: string[] = ['name', 'start', 'end'];
-  dataSource = ELEMENT_DATA;
+    displayedColumns: string[] = ['start', 'name', 'end'];
+    dataSource = ELEMENT_DATA;
 
-  constructor() { }
+    constructor(
+        private layoutService: LayoutService,
+    ) { }
 
-  ngOnInit() {
-    //time only
-    this.clockHandle = setInterval(() => {
-      this.clock = new Date();
-    }, 1000);
-  }
+    ngOnInit() {
+        //time only
+        this.clockHandle = setInterval(() => {
+            this.clock = new Date();
+        }, 1);
+    }
 
-  ngOnDestroy() {
-    clearInterval(this.clockHandle);
-  }
+    ngOnDestroy() {
+        clearInterval(this.clockHandle);
+    }
+
+    toggleLeftNav() {
+        this.layoutService.toggleLeft();
+    }
+
+    sidenavMode(): string {
+        return this.layoutService.getSidenavMode();
+    }
+
 }

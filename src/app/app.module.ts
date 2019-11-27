@@ -27,65 +27,9 @@ import { TablecontrolService } from './tablecontrol.service';
 
 import { LayoutService } from './layout/layout.service';
 
-import {
-  MatFormFieldModule,
-  MatAutocompleteModule,
-  MatButtonToggleModule,
-  MatButtonModule,
-  MatCardModule,
-  MatCheckboxModule,
-  MatChipsModule,
-  MatDatepickerModule,
-  MatDialogModule,
-  MatExpansionModule,
-  MatGridListModule,
-  MatIconModule,
-  MatInputModule,
-  MatListModule,
-  MatMenuModule,
-  MatNativeDateModule,
-  MatPaginatorModule,
-  MatProgressBarModule,
-  MatProgressSpinnerModule,
-  MatRadioModule,
-  MatRippleModule,
-  MatSelectModule,
-  MatSidenavModule,
-  MatSliderModule,
-  MatSlideToggleModule,
-  MatSnackBarModule,
-  MatStepperModule,
-  MatTableModule,
-  MatTabsModule,
-  MatToolbarModule,
-  MatTooltipModule
-} from '@angular/material';
+import { DraganddropService } from './draganddrop.service';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    LayoutComponent,
-    Teplate1Component,
-    AppDetailsComponent,
-    Template2Component,
-    LiveComponent,
-    ScheduleComponent,
-    PreviewComponent,
-    ConfigurationComponent,
-  ],
-  imports: [
-    HttpClientModule,
-    FlexLayoutModule,
-    A11yModule,
-    CdkStepperModule,
-    CdkTableModule,
-    CdkTreeModule,
-    DragDropModule,
-    PortalModule,
-    ScrollingModule,
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
+import {
     MatFormFieldModule,
     MatAutocompleteModule,
     MatButtonToggleModule,
@@ -117,14 +61,74 @@ import {
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule
-  ],
-  providers: [
-    CdkTableModule,
-    TablecontrolService,
-    LayoutService,
-  ],
-  bootstrap: [
-    AppComponent
-  ]
+} from '@angular/material';
+
+@NgModule({
+    declarations: [
+        AppComponent,
+        LayoutComponent,
+        Teplate1Component,
+        AppDetailsComponent,
+        Template2Component,
+        LiveComponent,
+        ScheduleComponent,
+        PreviewComponent,
+        ConfigurationComponent,
+    ],
+    imports: [
+        HttpClientModule,
+        FlexLayoutModule,
+        A11yModule,
+        CdkStepperModule,
+        CdkTableModule,
+        CdkTreeModule,
+        DragDropModule,
+        PortalModule,
+        ScrollingModule,
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatFormFieldModule,
+        MatAutocompleteModule,
+        MatButtonToggleModule,
+        MatButtonModule,
+        MatCardModule,
+        MatCheckboxModule,
+        MatChipsModule,
+        MatDatepickerModule,
+        MatDialogModule,
+        MatExpansionModule,
+        MatGridListModule,
+        MatIconModule,
+        MatInputModule,
+        MatListModule,
+        MatMenuModule,
+        MatNativeDateModule,
+        MatPaginatorModule,
+        MatProgressBarModule,
+        MatProgressSpinnerModule,
+        MatRadioModule,
+        MatRippleModule,
+        MatSelectModule,
+        MatSidenavModule,
+        MatSliderModule,
+        MatSlideToggleModule,
+        MatSnackBarModule,
+        MatStepperModule,
+        MatTableModule,
+        MatTabsModule,
+        MatToolbarModule,
+        MatTooltipModule
+    ],
+    providers: [
+        DragDropModule,
+        CdkTableModule,
+        TablecontrolService,
+        LayoutService,
+        DraganddropService,
+    ],
+    bootstrap: [
+        AppComponent
+    ]
 })
 export class AppModule { }
