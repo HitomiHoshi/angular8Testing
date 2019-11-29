@@ -1,4 +1,6 @@
 <mat-sidenav-container fullscreen class="sidenavcontainer">
+    <mat-sidenav-content>
+        <div class="pagesetting">
     <div>
         <p>
             <button mat-icon-button (click)="toggleLeftNav()">
@@ -11,9 +13,10 @@
         </p>
 
         <p class="clock">
-            {{ clock | date:"yyyy-MM-dd" }}
+            <span class="clockcontainer">{{ clock | date:"yyyy-MM-dd" }}</span>
             <br>
-            {{ clock | date: ' HH : mm : ss ' }}
+            <br>
+            <span class="clockcontainer">{{ clock | date: 'HH : mm : ss' }}</span>
         </p>
     </div>
     <br>
@@ -41,6 +44,8 @@
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
     </div>
+    </div>
+    </mat-sidenav-content>
     <mat-sidenav position="end" #sidenavright mode="{{sidenavMode()}}" class="rightnav">
         <app-template2></app-template2>
     </mat-sidenav>

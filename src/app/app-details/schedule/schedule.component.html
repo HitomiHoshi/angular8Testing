@@ -1,15 +1,23 @@
-<div class="example-container">
+<div class="pagesetting">
+    <div class="example-container">
     <h2>Schedule</h2>
 
     <div cdkDropList class="example-list" id="list-1" [cdkDropListData]="schedulelist" cdkDropListConnectedTo="list-2"
         (cdkDropListDropped)="drop($event)">
-        <div class="example-box" *ngFor="let item of schedulelist; let i = index" cdkDrag>{{item}} <button
-                mat-icon-button (click)="deleteitem(i)">
+        <div class="example-box" *ngFor="let item of schedulelist; let i = index" cdkDrag>
+            {{item}}
+            <span class="buttonalign"></span>
+            <button mat-icon-button (click)="duplicateitem(item)">
+                <mat-icon aria-label="duplicatebutton">filter_none</mat-icon>
+            </button>
+            <button mat-icon-button (click)="deleteitem(i)">
                 <mat-icon aria-label="deletebutton">delete_outline</mat-icon>
-            </button> </div>
+            </button>
+        </div>
     </div>
     <!-- <div cdkDropList id="list-1" #todoList="cdkDropList" [cdkDropListData]="todo" [cdkDropListConnectedTo]="[doneList]"
         class="example-list" (cdkDropListDropped)="drop($event)">
         <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
     </div> -->
+</div>
 </div>

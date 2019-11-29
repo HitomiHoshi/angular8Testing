@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { A11yModule } from '@angular/cdk/a11y';
 import { DragDropModule } from '@angular/cdk/drag-drop';
@@ -28,6 +29,10 @@ import { TablecontrolService } from './tablecontrol.service';
 import { LayoutService } from './layout/layout.service';
 
 import { DraganddropService } from './draganddrop.service';
+
+import { ModalModule } from './configuration/modal/modal.module';
+
+import { from } from 'rxjs';
 
 import {
     MatFormFieldModule,
@@ -76,6 +81,8 @@ import {
         ConfigurationComponent,
     ],
     imports: [
+        FormsModule,
+        ModalModule,
         HttpClientModule,
         FlexLayoutModule,
         A11yModule,

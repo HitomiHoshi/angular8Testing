@@ -9,11 +9,11 @@
 
 .rightnav {
     float: right;
-    width: 20%;
+    width: 20vw;
 }
 
 .buttonRight {
-    float: right;
+    flex: 1 1 auto;
 }
 
 .sidenavcontainer {
@@ -38,3 +38,11 @@ a.active {
     color: rgb(231, 20, 238); 
     
 }
+
+.navigate{
+    color: black;
+}
+
+.pagesetting{
+    padding: 10px 10px;
+  }

@@ -1,5 +1,5 @@
 .example-container {
-    width: 98%;
+    width: 99%;
     max-width: 100%;
     margin: 0 25px 25px 0;
     display: inline-block;
@@ -51,5 +51,13 @@
   
   .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
     transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  .buttonalign{
+    flex: 1 1 auto;
+  }
+
+  .pagesetting{
+    padding: 10px 10px;
   }
   

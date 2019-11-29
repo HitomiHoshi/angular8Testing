@@ -1,17 +1,42 @@
 <mat-sidenav-container fullscreen class="sidenavcontainer">
     <mat-sidenav-content>
-        <p>
-            <button mat-icon-button (click)="toggleLeftNav()">
-                <mat-icon aria-label="Left sidenav toggle icon">menu</mat-icon>
-            </button>
-            Configuration
-            <button mat-icon-button class="buttonRight" (click)="sidenavright.toggle()">
-                <mat-icon aria-label="Right sidenav toggle icon">vertical_split</mat-icon>
-            </button>
-        </p>
+        <div class="pagesetting">
+            <p>
+                <button mat-icon-button (click)="toggleLeftNav()">
+                    <mat-icon aria-label="Left sidenav toggle icon">menu</mat-icon>
+                </button>
+                Configuration
+                <button mat-icon-button class="buttonRight" (click)="sidenavright.toggle()">
+                    <mat-icon aria-label="Right sidenav toggle icon">vertical_split</mat-icon>
+                </button>
+            </p>
+            <div>
+                <div>
+                    <p>{{bodyText}}</p>
+                    <button mat-raised-button class="buttonspace" (click)="openModal('custom-modal-1')">
+                        Open Modal 1
+                    </button>
+                    <button mat-raised-button class="buttonspace" (click)="openModal('custom-modal-2')">
+                        Open Modal 2
+                    </button>
+                </div>
+                <app-modal id="custom-modal-1">
+                    <h1>A custom Modal!</h1>
+                    <p>Home page text:
+                        <mat-form-field>
+                            <input matInput type="text" [(ngModel)]="bodyText">
+                        </mat-form-field>
+                    </p>
+                    <button mat-raised-button (click)="closeModal('custom-modal-1')">Close</button>
+                </app-modal>
+                <app-modal id="custom-modal-2">
+                    <h1 style="height: 1000px">A tall custom Modal!</h1>
+                    <button mat-raised-button (click)="closeModal('custom-modal-2')">Close</button>
+                </app-modal>
+            </div>
+        </div>
     </mat-sidenav-content>
     <mat-sidenav position="end" #sidenavright mode="{{sidenavMode()}}" class="rightnav">
-        RightSideNav : {{sidenavMode()}}
         <app-template2></app-template2>
     </mat-sidenav>
 </mat-sidenav-container>

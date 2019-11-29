@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { TablecontrolService } from 'src/app/tablecontrol.service';
 import { LayoutService } from '../layout.service';
+import {MatPaginator} from '@angular/material/paginator';
 
 @Component({
     selector: 'app-teplate1',
@@ -14,6 +15,8 @@ export class Teplate1Component implements OnInit {
     dataSource;
     SideNavMode;
 
+    @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+
     constructor(
         private tableControlservice: TablecontrolService,
         private layoutService: LayoutService,
@@ -21,7 +24,7 @@ export class Teplate1Component implements OnInit {
 
     ngOnInit() {
         this.dataSource = this.tableControlservice.getChannelTableData();
-        //this.SideNavMode = this.layoutService.getSidenavMode();
+        this.dataSource.paginator = this.paginator;
     }
 
     toggleLeftNav() {

@@ -36,4 +36,8 @@ export class ScheduleComponent implements OnInit {
         this.schedulelist.splice(item, 1);
     }
 
+    duplicateitem(item){
+        this.schedulelist.push(item);
+    }
+
 }

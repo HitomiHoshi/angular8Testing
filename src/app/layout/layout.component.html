@@ -3,28 +3,30 @@
         <mat-toolbar color="primary">
             Playout
             <!-- TODO: button must at the end of toolbar -->
-            <button mat-icon-button class="buttonRight" (click)="toggleLeftNav()">
+            <span class="buttonRight"></span>
+            <button mat-icon-button (click)="toggleLeftNav()">
                 <mat-icon aria-label="Left sidenav toggle icon">menu</mat-icon>
             </button>
         </mat-toolbar>
 
+        <div class="pagesetting">
         <mat-nav-list>
             <mat-accordion displayMode="default" [multi]="false">
                 <ng-container *ngFor="let link of links">
                     <ng-container *ngIf="link.name === 'Schedule'; else link2">
                         <mat-expansion-panel [hideToggle]="false">
-                            <mat-expansion-panel-header>{{link.name}}</mat-expansion-panel-header>
+                            <mat-expansion-panel-header> {{ link.name }} </mat-expansion-panel-header>
                             <mat-list-item *ngFor="let childlink of link.children">
-                                <a matLine routerLinkActive="active" routerLink="/{{ childlink.path }}">
+                                <a class="navigate" matLine routerLinkActive="active" routerLink="/{{ childlink.path }}">
                                     {{ childlink.name }}
                                 </a>
                             </mat-list-item>
                         </mat-expansion-panel>
                     </ng-container>
                     <ng-template #link2>
-                        <mat-expansion-panel [hideToggle]="true" [disabled]="isDisable">
+                        <mat-expansion-panel [hideToggle]="true" [disabled]="isDisabled">
                             <mat-expansion-panel-header>
-                                <a matLine routerLinkActive="active" routerLink="/{{ link.path }}">
+                                <a class="navigate" matLine routerLinkActive="active" routerLink="/{{ link.path }}">
                                     {{ link.name }}
                                 </a>
                             </mat-expansion-panel-header>
@@ -33,6 +35,7 @@
                 </ng-container>
             </mat-accordion>
         </mat-nav-list>
+        </div>
         <!-- <mat-nav-list flex="row">
             <mat-list-item *ngFor="let link of links">
                 <ng-container *ngIf="link.name === 'Schedule'; else link2">
@@ -46,7 +49,6 @@
                 </ng-template>
             </mat-list-item>
         </mat-nav-list> -->
-
     </mat-sidenav>
 
     <mat-sidenav-content>

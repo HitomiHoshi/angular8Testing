@@ -5,3 +5,11 @@ table{
 .publishButton{
     float: right;
 }
+
+mat-form-field {
+  margin-right: 10px;
+}
+
+.pagesetting{
+  padding: 10px 10px;
+}
