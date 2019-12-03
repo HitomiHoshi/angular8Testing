@@ -67,6 +67,7 @@ import {
     MatToolbarModule,
     MatTooltipModule
 } from '@angular/material';
+import { ModalsComponent, ModalsDialog } from './modals/modals.component';
 
 @NgModule({
     declarations: [
@@ -79,6 +80,8 @@ import {
         ScheduleComponent,
         PreviewComponent,
         ConfigurationComponent,
+        ModalsComponent,
+        ModalsDialog,
     ],
     imports: [
         FormsModule,
@@ -136,6 +139,10 @@ import {
     ],
     bootstrap: [
         AppComponent
+    ],
+    entryComponents: [
+        ModalsComponent,
+        ModalsDialog,
     ]
 })
 export class AppModule { }

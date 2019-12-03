@@ -14,3 +14,10 @@
     float: right;
     width: 20vw;    /* 20% width from viewport */
 }
+
+.pagesetting{
+    min-height: 100vh !important;
+    overflow: auto;
+    padding: 10px 10px;
+    border: 5px solid white;
+  }

@@ -6,6 +6,7 @@ import { Template2Component } from './layout/template2/template2.component';
 import { AppDetailsComponent } from './app-details/app-details.component';
 import { ConfigurationComponent } from './configuration/configuration.component';
 import { LiveComponent } from './app-details/live/live.component';
+import { ModalsComponent } from './modals/modals.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'template1', pathMatch: 'full' },
@@ -17,6 +18,7 @@ const routes: Routes = [
         ]
     },
     { path: 'configuration', component: ConfigurationComponent },
+    { path: 'modals', component: ModalsComponent },
 ];
 
 @NgModule({
