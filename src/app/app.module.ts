@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { GoogleChartsModule } from 'angular-google-charts';
+import { Ng2GaugeModule } from 'ng2-gauge';
+import { GaugeChartModule } from 'angular-gauge-chart';
 
 import { A11yModule } from '@angular/cdk/a11y';
 import { DragDropModule } from '@angular/cdk/drag-drop';
@@ -11,6 +14,8 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { CdkStepperModule } from '@angular/cdk/stepper';
 import { CdkTableModule } from '@angular/cdk/table';
 import { CdkTreeModule } from '@angular/cdk/tree';
+
+import { ChartsModule } from 'ng2-charts';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +28,12 @@ import { LiveComponent } from './app-details/live/live.component';
 import { ScheduleComponent } from './app-details/schedule/schedule.component';
 import { PreviewComponent } from './app-details/preview/preview.component';
 import { ConfigurationComponent } from './configuration/configuration.component';
+import { LineChartComponent } from './line-chart/line-chart.component';
+import { CanvasjsSampleCodeComponent } from './canvasjs-sample-code/canvasjs-sample-code.component';
+import { CanvasjsLineGraphComponent } from './canvasjs-line-graph/canvasjs-line-graph.component';
+import { GooglePieChartComponent } from './google-pie-chart/google-pie-chart.component';
+import { Ng2GaugeChartComponent } from './ng2-gauge-chart/ng2-gauge-chart.component';
+import { AngularGaugeChartComponent } from './angular-gauge-chart/angular-gauge-chart.component';
 
 import { TablecontrolService } from './tablecontrol.service';
 
@@ -79,8 +90,18 @@ import {
         ScheduleComponent,
         PreviewComponent,
         ConfigurationComponent,
+        LineChartComponent,
+        CanvasjsSampleCodeComponent,
+        CanvasjsLineGraphComponent,
+        GooglePieChartComponent,
+        Ng2GaugeChartComponent,
+        AngularGaugeChartComponent,
     ],
     imports: [
+        GaugeChartModule,
+        Ng2GaugeModule,
+        GoogleChartsModule,
+        ChartsModule,
         FormsModule,
         ModalModule,
         HttpClientModule,
