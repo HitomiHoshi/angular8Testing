@@ -78,6 +78,7 @@ import {
     MatToolbarModule,
     MatTooltipModule
 } from '@angular/material';
+import { ModalsComponent, ModalsDialog } from './modals/modals.component';
 
 @NgModule({
     declarations: [
@@ -90,12 +91,17 @@ import {
         ScheduleComponent,
         PreviewComponent,
         ConfigurationComponent,
+<<<<<<< HEAD
         LineChartComponent,
         CanvasjsSampleCodeComponent,
         CanvasjsLineGraphComponent,
         GooglePieChartComponent,
         Ng2GaugeChartComponent,
         AngularGaugeChartComponent,
+=======
+        ModalsComponent,
+        ModalsDialog,
+>>>>>>> b9be115d55fa375d1648cc616ce72f2a9dc2bc0d
     ],
     imports: [
         GaugeChartModule,
@@ -157,6 +163,10 @@ import {
     ],
     bootstrap: [
         AppComponent
+    ],
+    entryComponents: [
+        ModalsComponent,
+        ModalsDialog,
     ]
 })
 export class AppModule { }

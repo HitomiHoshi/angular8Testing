@@ -1,5 +1,5 @@
 .example-container {
-    width: 99%;
+    width: 100%;
     max-width: 100%;
     margin: 0 25px 25px 0;
     display: inline-block;
@@ -8,7 +8,7 @@
   
   .example-list {
     border: solid 1px #ccc;
-    min-height: 60px;
+    min-height: 80vh; /*60px*/
     background: white;
     border-radius: 4px;
     overflow: hidden;
