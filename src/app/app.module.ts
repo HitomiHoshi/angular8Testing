@@ -91,17 +91,14 @@ import { ModalsComponent, ModalsDialog } from './modals/modals.component';
         ScheduleComponent,
         PreviewComponent,
         ConfigurationComponent,
-<<<<<<< HEAD
         LineChartComponent,
         CanvasjsSampleCodeComponent,
         CanvasjsLineGraphComponent,
         GooglePieChartComponent,
         Ng2GaugeChartComponent,
         AngularGaugeChartComponent,
-=======
         ModalsComponent,
-        ModalsDialog,
->>>>>>> b9be115d55fa375d1648cc616ce72f2a9dc2bc0d
+        ModalsDialog
     ],
     imports: [
         GaugeChartModule,
