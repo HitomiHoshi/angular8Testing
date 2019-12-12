@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { GoogleChartsModule } from 'angular-google-charts';
 import { Ng2GaugeModule } from 'ng2-gauge';
 import { GaugeChartModule } from 'angular-gauge-chart';
+import {GaugesModule} from 'ng-canvas-gauges';
 
 import { A11yModule } from '@angular/cdk/a11y';
 import { DragDropModule } from '@angular/cdk/drag-drop';
@@ -34,6 +35,10 @@ import { CanvasjsLineGraphComponent } from './canvasjs-line-graph/canvasjs-line-
 import { GooglePieChartComponent } from './google-pie-chart/google-pie-chart.component';
 import { Ng2GaugeChartComponent } from './ng2-gauge-chart/ng2-gauge-chart.component';
 import { AngularGaugeChartComponent } from './angular-gauge-chart/angular-gauge-chart.component';
+import { ModalsComponent, ModalsDialog } from './modals/modals.component';
+import { NgCanvasGaugesChartComponent } from './ng-canvas-gauges-chart/ng-canvas-gauges-chart.component';
+
+import { ContextMenuComponent } from './context-menu/context-menu.component';
 
 import { TablecontrolService } from './tablecontrol.service';
 
@@ -78,7 +83,6 @@ import {
     MatToolbarModule,
     MatTooltipModule
 } from '@angular/material';
-import { ModalsComponent, ModalsDialog } from './modals/modals.component';
 
 @NgModule({
     declarations: [
@@ -98,9 +102,12 @@ import { ModalsComponent, ModalsDialog } from './modals/modals.component';
         Ng2GaugeChartComponent,
         AngularGaugeChartComponent,
         ModalsComponent,
-        ModalsDialog
+        ModalsDialog,
+        NgCanvasGaugesChartComponent,
+        ContextMenuComponent
     ],
     imports: [
+        GaugesModule,
         GaugeChartModule,
         Ng2GaugeModule,
         GoogleChartsModule,

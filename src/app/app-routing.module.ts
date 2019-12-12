@@ -13,7 +13,8 @@ import { GooglePieChartComponent } from './google-pie-chart/google-pie-chart.com
 import { Ng2GaugeChartComponent } from './ng2-gauge-chart/ng2-gauge-chart.component';
 import { AngularGaugeChartComponent } from './angular-gauge-chart/angular-gauge-chart.component';
 import { ModalsComponent } from './modals/modals.component';
-
+import { NgCanvasGaugesChartComponent } from './ng-canvas-gauges-chart/ng-canvas-gauges-chart.component';
+import { ContextMenuComponent } from './context-menu/context-menu.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'template1', pathMatch: 'full' },
@@ -24,6 +25,7 @@ const routes: Routes = [
             { path: 'TV1', component: AppDetailsComponent },
         ]
     },
+    { path: 'modals', component: ModalsComponent },
     { path: 'configuration', component: ConfigurationComponent },
     { path: 'linechart', component: LineChartComponent },
     { path: 'canvasjssamplecode', component: CanvasjsSampleCodeComponent },
@@ -31,7 +33,8 @@ const routes: Routes = [
     { path: 'googlepiechart', component: GooglePieChartComponent },
     { path: 'ng2gaugechart', component: Ng2GaugeChartComponent },
     { path: 'angulargaugechart', component: AngularGaugeChartComponent },
-    { path: 'modals', component: ModalsComponent }
+    { path: 'ngcanvasgaugechart', component: NgCanvasGaugesChartComponent },
+    { path: 'contextmenu', component: ContextMenuComponent },
 ];
 
 @NgModule({
