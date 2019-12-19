@@ -9,6 +9,7 @@ export class LayoutService {
     sidenavMode: string;
 
     @Output() leftToggle: EventEmitter<any> = new EventEmitter();
+    @Output() rightToggle: EventEmitter<any> = new EventEmitter();
 
     constructor() { }
 
@@ -23,5 +24,10 @@ export class LayoutService {
     }
     getSidenavMode(): string {
         return this.sidenavMode;
+    }
+
+    toggleRight(){
+        console.log('Toggle working right');
+        this.rightToggle.emit('right');
     }
 }

@@ -1,15 +1,15 @@
-<mat-sidenav-container fullscreen class="sidenavcontainer">
-    <mat-sidenav #sidenavleft mode="{{SideNavMode}}" class="leftnav" [ngStyle]="{'width': LeftNavWidth}">
+<mat-sidenav-container autosize>
+    <mat-sidenav #sidenavleft mode="{{SideNavMode}}" class="leftnav" [ngStyle]="{'width': LeftNavWidth}" disableClose="true" opened>
         <mat-toolbar color="primary">
-            Playout
+            <span *ngIf="!showFiller">Monitoring</span> 
             <!-- TODO: button must at the end of toolbar -->
             <span class="buttonRight"></span>
-            <button mat-icon-button (click)="toggleLeftNav()">
+            <button mat-icon-button (click)=" toggleLeftNav()"> <!-- toggleLeftNav() -->
                 <mat-icon aria-label="Left sidenav toggle icon">menu</mat-icon>
             </button>
         </mat-toolbar>
 
-        <div class="pagesetting">
+        <!-- <div class="pagesetting">
         <mat-nav-list>
             <mat-accordion displayMode="default" [multi]="false">
                 <ng-container *ngFor="let link of links">
@@ -35,7 +35,8 @@
                 </ng-container>
             </mat-accordion>
         </mat-nav-list>
-        </div>
+        </div> -->
+
         <!-- <mat-nav-list flex="row">
             <mat-list-item *ngFor="let link of links">
                 <ng-container *ngIf="link.name === 'Schedule'; else link2">
@@ -49,9 +50,16 @@
                 </ng-template>
             </mat-list-item>
         </mat-nav-list> -->
+
+        <mat-nav-list flex="row">
+            <mat-list-item *ngFor="let link of links">
+                <a matLine routerLinkActive="active" routerLink="/{{ link.path }}">{{ link.name }}</a>
+            </mat-list-item>
+        </mat-nav-list>
     </mat-sidenav>
 
     <mat-sidenav-content>
         <router-outlet></router-outlet>
     </mat-sidenav-content>
+    
 </mat-sidenav-container>

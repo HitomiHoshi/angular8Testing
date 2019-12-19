@@ -2,11 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GoogleChartsModule } from 'angular-google-charts';
 import { Ng2GaugeModule } from 'ng2-gauge';
 import { GaugeChartModule } from 'angular-gauge-chart';
 import {GaugesModule} from 'ng-canvas-gauges';
+import {FileSelectDirective} from "ng2-file-upload";
 
 import { A11yModule } from '@angular/cdk/a11y';
 import { DragDropModule } from '@angular/cdk/drag-drop';
@@ -37,6 +38,8 @@ import { Ng2GaugeChartComponent } from './ng2-gauge-chart/ng2-gauge-chart.compon
 import { AngularGaugeChartComponent } from './angular-gauge-chart/angular-gauge-chart.component';
 import { ModalsComponent, ModalsDialog } from './modals/modals.component';
 import { NgCanvasGaugesChartComponent } from './ng-canvas-gauges-chart/ng-canvas-gauges-chart.component';
+import { Template3Component } from './layout/template3/template3.component';
+import { Template4Component } from './layout/template4/template4.component';
 
 import { ContextMenuComponent } from './context-menu/context-menu.component';
 
@@ -104,7 +107,10 @@ import {
         ModalsComponent,
         ModalsDialog,
         NgCanvasGaugesChartComponent,
-        ContextMenuComponent
+        ContextMenuComponent,
+        FileSelectDirective,
+        Template3Component,
+        Template4Component,
     ],
     imports: [
         GaugesModule,

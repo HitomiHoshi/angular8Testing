@@ -28,6 +28,7 @@
     "hammerjs": "^2.0.8",
     "ng-canvas-gauges": "^6.0.4",
     "ng2-charts": "^2.3.0",
+    "ng2-file-upload": "^1.4.0",
     "ng2-gauge": "^1.2.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",

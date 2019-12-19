@@ -9,6 +9,8 @@ import { LayoutService } from './layout.service';
 })
 export class LayoutComponent implements OnInit {
 
+    showFiller = false;
+
     @ViewChild('sidenavleft', { static: false }) sidenavleft;
 
     @HostListener('window:resize', ['$event']) onResizeEvent(event) {
@@ -16,19 +18,25 @@ export class LayoutComponent implements OnInit {
     }
 
     SideNavMode: string;
-    LeftNavWidth: string;
+    LeftNavWidth = "15vw";
+
+    // links = [
+    //     { path: 'template1', name: 'Channel' },
+    //     {
+    //         path: 'details',
+    //         name: 'Schedule',
+    //         children: [
+    //             { path: 'details/TV1', name: 'TV1' },
+    //         ]
+    //     },
+    //     { path: 'configuration', name: 'Configuration' }
+    // ];
 
     links = [
-        { path: 'template1', name: 'Channel' },
-        // { path: 'details', name: 'Schedule' },
-        {
-            path: 'details',
-            name: 'Schedule',
-            children: [
-                { path: 'details/TV1', name: 'TV1' },
-            ]
-        },
-        { path: 'configuration', name: 'Configuration' }
+        { path: 'template4', name: 'Dashboard' },
+        { path: 'details', name: 'Monitoring' },
+        { path: 'configuration', name: 'Playlist' },
+        { path: 'details', name: 'Schedule' },
     ];
 
     selected: ActivatedRoute;
@@ -57,7 +65,7 @@ export class LayoutComponent implements OnInit {
         }
         else {
             this.SideNavMode = "side";
-            this.LeftNavWidth = "20%";
+            //this.LeftNavWidth = "15vw";
 
             this.layoutService.setSideNavMode(this.SideNavMode);
         }
@@ -65,7 +73,14 @@ export class LayoutComponent implements OnInit {
 
     toggleLeftNav() {
         //this.layoutService.toggleLeft();
-        this.sidenavleft.toggle();
+        // this.sidenavleft.toggle();
+        this.showFiller = !this.showFiller;
+
+        if(this.showFiller)
+            this.LeftNavWidth = "3vw";
+        else
+            this.LeftNavWidth = "15vw";
+
     }
 
 }

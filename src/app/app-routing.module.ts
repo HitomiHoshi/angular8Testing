@@ -15,16 +15,19 @@ import { AngularGaugeChartComponent } from './angular-gauge-chart/angular-gauge-
 import { ModalsComponent } from './modals/modals.component';
 import { NgCanvasGaugesChartComponent } from './ng-canvas-gauges-chart/ng-canvas-gauges-chart.component';
 import { ContextMenuComponent } from './context-menu/context-menu.component';
+import { Template4Component } from './layout/template4/template4.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: 'template1', pathMatch: 'full' },
-    { path: 'template1', component: Teplate1Component },
+    { path: '', redirectTo: 'template4', pathMatch: 'full' },
+    { path: 'template4', component: Template4Component },
+    // { path: 'template1', component: Teplate1Component },
     { path: 'live', component: LiveComponent },
-    {
-        path: 'details', children: [
-            { path: 'TV1', component: AppDetailsComponent },
-        ]
-    },
+    {path: 'details', component: AppDetailsComponent },
+    // {
+    //     path: 'details', children: [
+    //         { path: 'TV1', component: AppDetailsComponent },
+    //     ]
+    // },
     { path: 'modals', component: ModalsComponent },
     { path: 'configuration', component: ConfigurationComponent },
     { path: 'linechart', component: LineChartComponent },
