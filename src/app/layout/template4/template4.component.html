@@ -1,8 +1,19 @@
 <mat-toolbar>
     <span>template4 works!</span>
     <span class="space"></span>
-    <button mat-icon-button class="buttonRight" (click)="togglerightNav()">
-        <mat-icon aria-label="Right sidenav toggle icon">vertical_split</mat-icon>
+    <span *ngIf="length != 0" >{{length}} selected </span>
+    <button *ngIf="length != 0" mat-icon-button (click)="onClick">
+        <mat-icon aria-label="close">close</mat-icon>
+    </button>
+    <button mat-icon-button (click)="togglerightNav()">
+        <mat-icon aria-label="Right sidenav toggle icon">info</mat-icon>
     </button>
 </mat-toolbar>
 <app-teplate1></app-teplate1>
+<mat-toolbar>
+    <span><small>Outgoing Traffic: Mbps</small></span>
+    <span class="space"></span>
+    <span><small>Ingoing Trafic: Mbps</small></span>
+    <span class="space"></span>
+    <span><small>Unicast Session: xx</small></span>
+</mat-toolbar>

@@ -11,7 +11,7 @@
                 </button> -->
                 <br>
             </p>
-            <div>
+            <div class="tableContainer">
                 <!-- TODO: setting paginator to table -->
                 <!-- <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator> -->
 
@@ -54,7 +54,15 @@
 
                     <ng-container matColumnDef="state">
                         <th mat-header-cell *matHeaderCellDef> State </th>
-                        <td mat-cell *matCellDef="let element">{{element.state}}</td>
+                        <td mat-cell *matCellDef="let element">{{element.state}}
+                            <ng-container *ngIf="element.state === 'Running'; else Idle" >
+                                <mat-icon class="onAir smallicon" aria-label="onAir">lens</mat-icon>
+                            </ng-container>
+                            <ng-template #Idle>
+                                <mat-icon class="ready smallicon" aria-label="ready">lens</mat-icon>
+                            </ng-template>
+                            
+                        </td>
                     </ng-container>
 
                     <ng-container matColumnDef="now">
@@ -67,23 +75,32 @@
                         <td mat-cell *matCellDef="let element">{{element.next}}</td>
                     </ng-container>
 
-                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
                     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                 </table>
             </div>
         </div>
-        <code>{{checkedRow}}</code>
     </mat-sidenav-content>
     <!-- "{{SideNavMode}}" -->
-    <mat-sidenav position="end" #sidenavright mode="{{sidenavMode()}}" class="rightnav" opened>
-        <mat-tab-group >
-            <mat-tab label="Live">
-                <app-template2></app-template2>
-            </mat-tab>
-            <mat-tab label="Setting">
-                <app-template3></app-template3>
-            </mat-tab>
-        </mat-tab-group>
-        
+    <mat-sidenav position="end" #sidenavright mode="{{sidenavMode()}}" class="rightnav" [ngStyle]="{'width': rightSideNavWidth}">
+        <ng-container [ngSwitch]="lengthSelected">
+            <ng-container *ngSwitchCase="0">
+                <app-template-activity></app-template-activity>
+            </ng-container>
+            <ng-container *ngSwitchCase="1">
+                <mat-tab-group >
+                    <mat-tab label="Live">
+                        <app-template-live></app-template-live>
+                    </mat-tab>
+                    <mat-tab label="Setting">
+                        <app-template3></app-template3>
+                    </mat-tab>
+                </mat-tab-group>
+            </ng-container>
+            <ng-container *ngSwitchDefault>
+                <mat-icon aria-label="stop">close</mat-icon>
+                Tak tahu nak buat apa. huhuhuhu
+            </ng-container>
+        </ng-container>
     </mat-sidenav>
 </mat-sidenav-container>

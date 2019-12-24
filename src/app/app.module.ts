@@ -86,6 +86,13 @@ import {
     MatToolbarModule,
     MatTooltipModule
 } from '@angular/material';
+import { TemplateLiveComponent } from './layout/template-live/template-live.component';
+import { TemplateActivityComponent } from './layout/template-activity/template-activity.component';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { FlatpickrModule } from 'angularx-flatpickr';
+import { AngularCalanderKitchenSinkComponent } from './angular-calander-kitchen-sink/angular-calander-kitchen-sink.component';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
     declarations: [
@@ -111,6 +118,9 @@ import {
         FileSelectDirective,
         Template3Component,
         Template4Component,
+        TemplateLiveComponent,
+        TemplateActivityComponent,
+        AngularCalanderKitchenSinkComponent,
     ],
     imports: [
         GaugesModule,
@@ -162,7 +172,10 @@ import {
         MatTableModule,
         MatTabsModule,
         MatToolbarModule,
-        MatTooltipModule
+        MatTooltipModule,
+        NgbModalModule,
+        FlatpickrModule.forRoot(),
+        CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
     ],
     providers: [
         DragDropModule,

@@ -19,6 +19,7 @@ export class LayoutComponent implements OnInit {
 
     SideNavMode: string;
     LeftNavWidth = "15vw";
+    rightNavWidth;
 
     // links = [
     //     { path: 'template1', name: 'Channel' },
@@ -37,6 +38,7 @@ export class LayoutComponent implements OnInit {
         { path: 'details', name: 'Monitoring' },
         { path: 'configuration', name: 'Playlist' },
         { path: 'details', name: 'Schedule' },
+        { path: 'configuration', name: 'Configuration' },
     ];
 
     selected: ActivatedRoute;
@@ -48,7 +50,6 @@ export class LayoutComponent implements OnInit {
         this.layoutService.leftToggle.subscribe(data => {
             this.toggleLeftNav();
         });
-
     }
 
     ngOnInit() {
@@ -59,27 +60,43 @@ export class LayoutComponent implements OnInit {
     public onloadWindowSetup(width): void {
         if (width <= 900) {
             this.SideNavMode = "over";
-            this.LeftNavWidth = "100%"; // TODO: If width is small the left Nav should be 100%
-
+            // this.LeftNavWidth = "100%"; // TODO: If width is small the left Nav should be 100%
+            this.rightNavWidth = "calc(100vw - 57px)"
+            if (!this.showFiller)
+            {
+                this.toggleLeftNav();
+            }
+            console.log("right",this.rightNavWidth)
             this.layoutService.setSideNavMode(this.SideNavMode);
+            this.layoutService.setrightsidenav(this.rightNavWidth)
         }
         else {
             this.SideNavMode = "side";
             //this.LeftNavWidth = "15vw";
-
+            this.rightNavWidth = "20vw"
             this.layoutService.setSideNavMode(this.SideNavMode);
+            this.layoutService.setrightsidenav(this.rightNavWidth)
         }
     }
 
     toggleLeftNav() {
         //this.layoutService.toggleLeft();
         // this.sidenavleft.toggle();
+
+        console.log("side",this.SideNavMode)
+        if(this.SideNavMode === "over" && this.LeftNavWidth ==="57px")
+        {
+            this.LeftNavWidth ="57px"
+        }
+        else
+        {
         this.showFiller = !this.showFiller;
 
         if(this.showFiller)
-            this.LeftNavWidth = "3vw";
+            this.LeftNavWidth = "57px";
         else
             this.LeftNavWidth = "15vw";
+        }
 
     }
 

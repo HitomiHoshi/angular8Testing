@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Template3Component implements OnInit {
 
+  xpandStatus: boolean;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  cancel(){
+    this.xpandStatus = !this.xpandStatus;
+  }
 }

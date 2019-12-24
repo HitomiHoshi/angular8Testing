@@ -2,6 +2,11 @@ table{
     width:100%;
 }
 
+.tableContainer{
+    height: calc(100vh - 215px) !important;
+    overflow: auto;
+}
+
 .buttonRight {
     float: right;
 }
@@ -16,16 +21,28 @@ table{
 
 .rightnav {
     float: right;
-    width: 20vw;
+    /* width: 20vw; */
 }
 
 .pagesetting{
-    min-height: 100vh !important;
-    overflow: auto;
+    height: calc(100vh - 164px) !important;
+    /* overflow: auto; */
     padding: 10px 10px;
     border: 5px solid white;
   }
 
 small{
     color: darkgray;
+}
+
+.onAir{
+    color: cadetblue;
+}
+
+.ready{
+    color: darkseagreen;
+}
+
+.smallicon{
+    font-size: 12px;
 }

@@ -1,12 +1,14 @@
-<mat-sidenav-container autosize>
-    <mat-sidenav #sidenavleft mode="{{SideNavMode}}" class="leftnav" [ngStyle]="{'width': LeftNavWidth}" disableClose="true" opened>
+<mat-sidenav-container class="sidenavcontainer" autosize>
+    <!-- {{SideNavMode}} -->
+    <mat-sidenav #sidenavleft mode="side" class="leftnav" [ngStyle]="{'width': LeftNavWidth}" disableClose="true" opened>
         <mat-toolbar color="primary">
             <span *ngIf="!showFiller">Monitoring</span> 
             <!-- TODO: button must at the end of toolbar -->
-            <span class="buttonRight"></span>
-            <button mat-icon-button (click)=" toggleLeftNav()"> <!-- toggleLeftNav() -->
-                <mat-icon aria-label="Left sidenav toggle icon">menu</mat-icon>
-            </button>
+            <span class="buttonRight" ></span>
+            <!-- <button mat-icon-button (click)=" toggleLeftNav()">
+                <mat-icon aria-label="Left sidenav toggle icon" >menu</mat-icon>
+            </button> -->
+                <mat-icon class="pointer" aria-label="Left sidenav toggle icon" (click)=" toggleLeftNav()" >menu</mat-icon>
         </mat-toolbar>
 
         <!-- <div class="pagesetting">
@@ -50,10 +52,36 @@
                 </ng-template>
             </mat-list-item>
         </mat-nav-list> -->
-
+        <p><br></p>
         <mat-nav-list flex="row">
             <mat-list-item *ngFor="let link of links">
-                <a matLine routerLinkActive="active" routerLink="/{{ link.path }}">{{ link.name }}</a>
+                <a *ngIf="showFiller" matLine routerLinkActive="active" routerLink="/{{ link.path }}">
+                    <ng-container [ngSwitch]="link.name">
+                        <ng-container *ngSwitchCase="'Dashboard'">
+                            <mat-icon aria-label="dashboard">dashboard</mat-icon>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'Schedule'">
+                            <mat-icon aria-label="schedule">schedule</mat-icon>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'Monitoring'">
+                            <mat-icon aria-label="monitoring">visibility</mat-icon>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'Playlist'">
+                            <mat-icon aria-label="playlist">queue_music</mat-icon>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'Configuration'">
+                            <!-- <mat-icon aria-label="configuration">build</mat-icon> -->
+                        </ng-container>
+                        <ng-container *ngSwitchDefault>
+                            <mat-icon aria-label="default">insert_drive_file</mat-icon>
+                        </ng-container>
+                    </ng-container>
+                </a>
+                <a *ngIf="!showFiller && link.name != 'Configuration'" matLine routerLinkActive="active" routerLink="/{{ link.path }}">{{ link.name }}</a>
+            </mat-list-item>
+            <mat-list-item class="footer">
+                <a *ngIf="showFiller" matLine routerLinkActive="active" routerLink="/configuration"><mat-icon aria-label="configuration">build</mat-icon></a>
+                <a *ngIf="!showFiller" matLine routerLinkActive="active" routerLink="/configuration">Configuration</a>
             </mat-list-item>
         </mat-nav-list>
     </mat-sidenav>

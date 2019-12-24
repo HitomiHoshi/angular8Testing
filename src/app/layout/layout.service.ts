@@ -10,6 +10,7 @@ export class LayoutService {
 
     @Output() leftToggle: EventEmitter<any> = new EventEmitter();
     @Output() rightToggle: EventEmitter<any> = new EventEmitter();
+    @Output() rightWidth: EventEmitter<any> = new EventEmitter();
 
     constructor() { }
 
@@ -29,5 +30,9 @@ export class LayoutService {
     toggleRight(){
         console.log('Toggle working right');
         this.rightToggle.emit('right');
+    }
+
+    setrightsidenav(width){
+        this.rightWidth.emit(width);
     }
 }

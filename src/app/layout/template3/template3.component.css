@@ -1,0 +1,17 @@
+.edit{
+    float: right;
+    pointer-events: visiblefill !important; 
+}
+
+mat-panel-title,
+mat-panel-description,
+span{
+    display: block;
+}
+
+
+
+mat-expansion-panel-header 
+{
+   pointer-events: none;
+}

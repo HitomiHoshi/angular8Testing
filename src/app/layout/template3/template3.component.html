@@ -1,1 +1,32 @@
 <p>template3 works!</p>
+
+<mat-accordion>
+    <mat-expansion-panel [hideToggle]="true" [(expanded)] = "xpandStatus">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <span>Channel ID</span>
+                <span *ngIf="!xpandStatus" ><mat-icon aria-label="image">image</mat-icon> channel name</span>
+            </mat-panel-title>
+            <mat-panel-description *ngIf="!xpandStatus">
+                <span><mat-icon class="edit" aria-label="edit">edit</mat-icon></span>
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-icon aria-label="image">image</mat-icon>
+        <button mat-raised-button (click)="onClick">Add Image</button>
+        <br>
+        <mat-form-field>
+            <input matInput placeholder="Channel name  : ">
+        </mat-form-field>
+        <mat-action-row>
+            <button mat-button (click)="cancel()">Cancel</button>
+            <button mat-button (click)="cancel()">Save</button>
+        </mat-action-row>
+    </mat-expansion-panel>
+    <mat-expansion-panel [hideToggle]="true">
+        <mat-expansion-panel-header>Panel header2</mat-expansion-panel-header>
+         Panel body
+        <mat-action-row>
+            <button mat-button (click)="onAction(event)">Action1</button>
+        </mat-action-row>
+    </mat-expansion-panel>
+</mat-accordion>
