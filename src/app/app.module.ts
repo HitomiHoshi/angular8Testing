@@ -93,6 +93,8 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { AngularCalanderKitchenSinkComponent } from './angular-calander-kitchen-sink/angular-calander-kitchen-sink.component';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { FullcalendartestingComponent } from './fullcalendartesting/fullcalendartesting.component';
 
 @NgModule({
     declarations: [
@@ -121,6 +123,7 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
         TemplateLiveComponent,
         TemplateActivityComponent,
         AngularCalanderKitchenSinkComponent,
+        FullcalendartestingComponent,
     ],
     imports: [
         GaugesModule,
@@ -175,7 +178,8 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
         MatTooltipModule,
         NgbModalModule,
         FlatpickrModule.forRoot(),
-        CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
+        CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
+        FullCalendarModule
     ],
     providers: [
         DragDropModule,

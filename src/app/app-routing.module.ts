@@ -17,7 +17,7 @@ import { NgCanvasGaugesChartComponent } from './ng-canvas-gauges-chart/ng-canvas
 import { ContextMenuComponent } from './context-menu/context-menu.component';
 import { Template4Component } from './layout/template4/template4.component';
 import { AngularCalanderKitchenSinkComponent } from './angular-calander-kitchen-sink/angular-calander-kitchen-sink.component';
-
+import { FullcalendartestingComponent } from './fullcalendartesting/fullcalendartesting.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'template4', pathMatch: 'full' },
@@ -40,7 +40,8 @@ const routes: Routes = [
     { path: 'angulargaugechart', component: AngularGaugeChartComponent },
     { path: 'ngcanvasgaugechart', component: NgCanvasGaugesChartComponent },
     { path: 'contextmenu', component: ContextMenuComponent },
-    { path: 'calender', component: AngularCalanderKitchenSinkComponent },
+    { path: 'calendar', component: AngularCalanderKitchenSinkComponent },
+    { path: 'fullcalendar', component: FullcalendartestingComponent },
 ];
 
 @NgModule({
